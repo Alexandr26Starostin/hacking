@@ -17,8 +17,8 @@ start:
 	mov dx, offset name_of_file_with_text      ;ds:dx = address on name of file with text  
 	int 21h                                    
 
-	jc error_end_work_of_program     ;if CF is set to CY => ax = error code
-							         ;else               => ax = file handle 
+	jc error_end_work_of_program     ;if CF is set to CY => ax = error code   (cannot find file)
+							         ;else               => ax = file handle  (can    find file)
 
 	jmp end_work_of_program          ;skip massage about error
 
